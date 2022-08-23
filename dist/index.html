@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To Do List</title>
+    <script src="bundle.js" defer></script>
+</head>
+<body>
+    <div class="header">
+        <p>To-Do-List</p>
+        <p class="usernAME"></p>
+    </div>
+    <div class="main">
+        <h2>Project1</h2>
+        <div class="listGrid">
+            <div class="gridHeadings">
+                <div class="colOne">Title</div>
+                <div class="colTwo">Description</div>
+                <div class="colThree">dueDate</div>
+                <div class="colFour">Priority</div>
+                <div class="colFiv">Notes</div>
+            </div>
+            <div class="gridItems">
+                <div class="colOne" id="title"> <input type="text" id="title" class="input"></div>
+                <div class="colTwo"> <input type="text" id="description" class="input"></div>
+                <div class="colThree"> <input type="date" id="dueDate" class="input"></div>
+                <div class="colFour">
+                <select id="levels" name="levels" class="input">
+                    <option value="Low">Low</option>
+                    <option value="Medium">Medium</option>
+                    <option value="High">High</option>
+                </select> </div>
+                <div class="colFive"> <textarea type="text" id="notes" class="input"> </textarea></div>
+            </div>
+        </div>
+        <button id="fillRow">Add Task</button>
+    </div>
+</body>
+</html>

@@ -1,0 +1,29 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+.header {
+    height: 10vh;
+    background: #1d4ed8;
+    font-size: 3rem;
+}
+
+.main {
+    padding: 50px;
+}
+
+.gridHeadings {
+    display: grid;
+    grid-template-columns: repeat(5, 20%);
+}
+
+.gridItems {
+    display: grid;
+    grid-template-columns: repeat(5, 15%);
+    gap: 5%;
+}
+
+input {
+    max-width: 100%;
+}
