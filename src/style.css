@@ -27,4 +27,9 @@
 input {
     max-width: 100%;
 }
+.listGrid  > div {
+    display: grid;
+    grid-template-columns: repeat(5, 15%);
+    gap: 5%;
+}
 

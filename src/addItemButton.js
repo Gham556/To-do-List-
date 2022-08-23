@@ -52,6 +52,7 @@ export const addRow = () => {
     description.textContent = currentRow.description;
     dueDate.textContent = currentRow.dueDate;
     priority.textContent = currentRow.priority;
+    notes.textContent = currentRow.notes;
 
     console.log(currentRow);
 
