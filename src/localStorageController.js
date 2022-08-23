@@ -11,6 +11,8 @@ let counter = 0
     const loadArray = lastSave.split(',');
 
     counter += 1; 
+    
+    while (loadArray.length > 0) {
     const row = document.createElement('div');
    
     const title = document.createElement('div');
@@ -35,6 +37,6 @@ let counter = 0
     dueDate.textContent = loadArray.splice(0, 1);
     priority.textContent = loadArray.splice(0, 1);
     notes.textContent = loadArray.splice(0, 1);
-
+    }
 
     }
