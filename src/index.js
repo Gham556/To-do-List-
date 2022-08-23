@@ -1,6 +1,5 @@
 import './style.css';
-import { addItem } from './addItemButton.js';
-import { addRow } from './DOMManipulator.js';
+import { addItem, addRow } from './addItemButton.js';
 
 
 const TEXT = document.createElement('p');
@@ -25,3 +24,4 @@ const currentItem = function (title, description, dueDate, priority, notes) {
 
 addItemButton.addEventListener('click', addItem);
 addItemButton.addEventListener('click', addRow);
+
