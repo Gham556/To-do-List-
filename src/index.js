@@ -6,7 +6,7 @@ const TEXT = document.createElement('p');
 const variables = document.querySelectorAll('.input');
 const addItemButton = document.querySelector('#fillRow');
 const dropwDown = document.querySelector('select');
-let test;
+const form = document.querySelector('form');
 
 
 
@@ -24,4 +24,7 @@ const currentItem = function (title, description, dueDate, priority, notes) {
 
 addItemButton.addEventListener('click', addItem);
 addItemButton.addEventListener('click', addRow);
-
+const clearFormField = addItemButton.addEventListener('click', () => {
+    form.reset();
+    console.log('test')
+})
