@@ -16,7 +16,7 @@ export const currentItem = function (title, description, dueDate, priority, note
 
 
 export function addItem () {
-   
+    
     for (let item of variables) {
         allTasks.push(item.value);
         currentTask.push(item.value);
@@ -54,6 +54,11 @@ export const addRow = () => {
     priority.textContent = currentRow.priority;
     notes.textContent = currentRow.notes;
 
-    console.log(currentRow);
+    while (currentTask.length > 0) {
+        currentTask.pop();
+    }
+
+    console.log(currentTask)
+    console.log(currentRow)
 
 }
