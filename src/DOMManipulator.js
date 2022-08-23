@@ -1,11 +1,11 @@
-import { currentItem } from './addItemButton';
+
 
 const addItemButton = document.querySelector('#fillRow');
 const variables = document.querySelectorAll('.input');
 const allTasks = [];
 const listGrid = document.querySelector('.listGrid');
 const gridItems = document.querySelector('.gridItems');
-let counter = 0;
+let counter = 0
 
 // export const addRow = () => {
     

@@ -58,7 +58,6 @@ export const addRow = () => {
         currentTask.pop();
     }
 
-    console.log(currentTask)
-    console.log(currentRow)
+    localStorage.setItem('project', allTasks);
 
 }

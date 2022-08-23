@@ -1,5 +1,6 @@
 import './style.css';
 import { addItem, addRow } from './addItemButton.js';
+import { addRowFromStorage } from './localStorageController.js';
 
 
 const TEXT = document.createElement('p');
@@ -28,3 +29,8 @@ const clearFormField = addItemButton.addEventListener('click', () => {
     form.reset();
     console.log('test')
 })
+
+
+
+window.addEventListener('DOMContentLoaded', addRowFromStorage);
+
