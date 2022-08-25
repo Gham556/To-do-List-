@@ -1,6 +1,6 @@
 const addItemButton = document.querySelector('#fillRow');
 const variables = document.querySelectorAll('.input');
-const allTasks = [];
+const allTasks = [localStorage.getItem('project')] || [];
 const currentTask = [];
 const listGrid = document.querySelector('.listGrid');
 const gridItems = document.querySelector('.gridItems');
@@ -10,7 +10,7 @@ export const currentItem = function (title, description, dueDate, priority, note
     this.title = title
     this.description = description; 
     this.dueDate = dueDate;
-    this.priority = priority; 
+    this.priority = priority;
     this.notes = notes; 
 }
 
@@ -21,7 +21,7 @@ export function addItem () {
         allTasks.push(item.value);
         currentTask.push(item.value);
     }    
-    
+    console.log(allTasks);
 }
 
 
@@ -58,6 +58,7 @@ export const addRow = () => {
         currentTask.pop();
     }
 
+    
     localStorage.setItem('project', allTasks);
 
 }

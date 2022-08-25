@@ -5,14 +5,20 @@ const allTasks = [];
 const listGrid = document.querySelector('.listGrid');
 const gridItems = document.querySelector('.gridItems');
 let counter = 0
+const tempArray = [];
 
  export const addRowFromStorage = () => {
     const lastSave = localStorage.getItem('project');
-    const loadArray = lastSave.split(',');
 
-    counter += 1; 
+    
+    const loadArray = lastSave.split(',');
+    console.log (loadArray);
+
+   
     
     while (loadArray.length > 0) {
+    
+    counter += 1; 
     const row = document.createElement('div');
    
     const title = document.createElement('div');
@@ -32,11 +38,13 @@ let counter = 0
     row.appendChild(priority);
     row.appendChild(notes);
 
-    title.textContent = loadArray.splice(0, 1);
-    description.textContent = loadArray.splice(0, 1);
-    dueDate.textContent = loadArray.splice(0, 1);
-    priority.textContent = loadArray.splice(0, 1);
-    notes.textContent = loadArray.splice(0, 1);
-    }
+ title.textContent = loadArray.splice(0, 1);
+ description.textContent = loadArray.splice(0, 1);
+ dueDate.textContent = loadArray.splice(0, 1);
+ priority.textContent = loadArray.splice(0, 1);
+ notes.textContent = loadArray.splice(0, 1);
+
+    
+    };
 
     }
