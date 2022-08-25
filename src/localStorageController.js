@@ -10,9 +10,7 @@ const tempArray = [];
  export const addRowFromStorage = () => {
     const lastSave = localStorage.getItem('project');
 
-    
-    const loadArray = lastSave !== null ? lastSave.split(',') : []; 
-
+    const loadArray = lastSave !== null ? lastSave.split(',') : [];
 
    
     

@@ -15,6 +15,7 @@ const projectController = localStorage.getItem('allProjects');
 const allProjectsArray = projectController !== null ? projectController.split(',') : [];
 const header = document.querySelector('.header');
 const projectTabs = document.querySelector('.projectTabs');
+const projectName = document.querySelector('.projectName');
 
 const currentItem = function (title, description, dueDate, priority, notes) {
     this.title = title
@@ -26,11 +27,12 @@ const currentItem = function (title, description, dueDate, priority, notes) {
 
 const loadTabs = function loadSavedLists () {
     
-
+    projectName.value = localStorage.getItem('loading');   
+   
 
     for (let x of allProjectsArray) {
         const projectTab = document.createElement ('h2');
-        projectTab.textContent = x;
+        projectTab.textContent = x === projectName.value ? '' : x;
         projectTabs.appendChild(projectTab);
 
         projectTab.addEventListener('click', switchTabs)
