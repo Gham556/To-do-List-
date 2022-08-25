@@ -11,7 +11,7 @@ const tempArray = [];
     const lastSave = localStorage.getItem('project');
 
     
-    const loadArray = lastSave.split(',');
+    const loadArray = lastSave.split(','); 
     console.log (loadArray);
 
    

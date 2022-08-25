@@ -1,6 +1,6 @@
 const addItemButton = document.querySelector('#fillRow');
 const variables = document.querySelectorAll('.input');
-const allTasks = [localStorage.getItem('project')] || [];
+const allTasks =  localStorage.getItem('project') !== null ? [localStorage.getItem('project')] : [];
 const currentTask = [];
 const listGrid = document.querySelector('.listGrid');
 const gridItems = document.querySelector('.gridItems');
@@ -60,5 +60,6 @@ export const addRow = () => {
 
     
     localStorage.setItem('project', allTasks);
+    console.log(currentRow);
 
 }
