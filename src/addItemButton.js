@@ -21,7 +21,7 @@ export function addItem () {
         allTasks.push(item.value);
         currentTask.push(item.value);
     }    
-    console.log(allTasks);
+    
 }
 
 
@@ -60,6 +60,6 @@ export const addRow = () => {
 
     
     localStorage.setItem('project', allTasks);
-    console.log(currentRow);
+    
 
 }
