@@ -1,13 +1,13 @@
 
 const saveButton = document.querySelector('#saveList');
-const projectName = document.querySelector('#projectName');
+const projectName = document.querySelector('.projectName');
 const newProject = document.querySelector('#newProject');
 const deleteButton = document.querySelector('#deleteButton');
 const projectTabs = document.querySelector('.projectTabs');
-const projectTitle = projectName.textContent;
+const projectTitle = projectName.value;
 const projectController = localStorage.getItem('allProjects');
 
-const allProjects = projectController !== null ? [projectController] : [];
+const allProjectsArray = projectController !== null ? projectController.split(',') : [];
 
 const nameListPair = function (name, list) {
     this.name = name; 
@@ -16,6 +16,9 @@ const nameListPair = function (name, list) {
     localStorage.setItem(name, list);
 }
 
+const newProjectName = () => {
+    alert ('nameExists');
+}
 
 export const saveList = function commitWholeListToLocalStorageUnderProjectName () {
    const savedProject = structuredClone(localStorage.getItem('project'));
@@ -24,13 +27,16 @@ export const saveList = function commitWholeListToLocalStorageUnderProjectName (
     const savePair = new nameListPair(projectTitle, savedProject);
 
     console.log(localStorage.getItem(projectTitle));
+
+   localStorage.clear('allprojects')
 }
 
 export const addProject = function clearDOMContentAndSaveList () {
     saveList();
-    allProjects.push(projectTitle);
-    localStorage.setItem('allProjects', allProjects);
+    allProjectsArray.includes(projectName.value) === true ?  newProjectName() : allProjectsArray.push(projectName.value);
+    localStorage.setItem('allProjects', allProjectsArray);
     localStorage.removeItem('project');
+    console.log(localStorage.getItem('allProjects'));
     location.reload();  
 
    
@@ -40,10 +46,9 @@ export const addProject = function clearDOMContentAndSaveList () {
 
 export const loadTabs = function loadSavedLists () {
     
-   
-    const projectsArray = projectController.split(',');
+    console.log(allProjectsArray)
 
-    for (let x of projectsArray) {
+    for (let x of allProjectsArray) {
         const projectTab = document.createElement ('h2');
 
         projectTab.textContent = x;
