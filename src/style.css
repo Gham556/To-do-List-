@@ -37,4 +37,14 @@ input {
     font-size: 32px;
     font-weight: 700;
     border: none;
+    max-width: 20%;
+}
+
+.projectTabs {
+    display: flex;
+    gap: 10px;
+}
+
+.projectTabs > * {
+    border: solid #000;
 }

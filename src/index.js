@@ -1,7 +1,7 @@
 import './style.css';
 import { addItem, addRow } from './addItemButton.js';
 import { addRowFromStorage } from './localStorageController.js';
-import { saveList, addProject } from './saveButton.js';
+import { saveList, addProject} from './saveButton.js';
 import { switchTabs } from './switchProjectTab.js'
 
 const TEXT = document.createElement('p');
@@ -31,27 +31,32 @@ const loadTabs = function loadSavedLists () {
    
 
     for (let x of allProjectsArray) {
+        if (x === projectName.value) {
+            continue
+        }
+
+        else {
         const projectTab = document.createElement ('h2');
-        projectTab.textContent = x === projectName.value ? '' : x;
+        projectTab.textContent = x === projectName.value ? document : x;
         projectTabs.appendChild(projectTab);
 
         projectTab.addEventListener('click', switchTabs)
+            
     }
 }
-
+}
 
 
 addItemButton.addEventListener('click', addItem);
 addItemButton.addEventListener('click', addRow);
-const clearFormField = addItemButton.addEventListener('click', () => {
-    form.reset();
-})
+
 
 
 
 window.addEventListener('DOMContentLoaded', addRowFromStorage);
 window.addEventListener('DOMContentLoaded', loadTabs);
 
-saveButton.addEventListener('click', saveList);
+saveButton.addEventListener('click', saveList)
+
 newProject.addEventListener('click', addProject);
 

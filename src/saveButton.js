@@ -31,9 +31,9 @@ export const addProject = function clearDOMContentAndSaveList () {
    
     location.reload();  
 
-   
-
 };
+
+
 
 
 
