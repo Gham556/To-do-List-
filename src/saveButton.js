@@ -29,13 +29,7 @@ export const addProject = function clearDOMContentAndSaveList () {
     localStorage.setItem('allProjects', allProjectsArray);
     localStorage.removeItem('project');
    
-    location.reload();  
-
-   
+    localStorage.setItem('loading', 'Project');
+    location.reload();
 
 };
-
-
-
-
-

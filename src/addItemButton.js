@@ -62,4 +62,4 @@ export const addRow = () => {
     localStorage.setItem('project', allTasks);
     
 
-}
+};
