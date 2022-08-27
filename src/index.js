@@ -63,3 +63,14 @@ window.addEventListener('DOMContentLoaded', loadTabs);
 
 saveButton.addEventListener('click', saveList);
 newProject.addEventListener('click', addProject);
+
+projectName.addEventListener('input', () => {
+    localStorage.setItem(projectName.value, localStorage.getItem('project'));
+    const allProjectsString = localStorage.getItem('allProjects');
+    const allProjectsArray = allProjectsString.split(',');
+    console.log(allProjectsArray);
+
+    let x = allProjectsArray.indexOf(localStorage.getItem('loading'));
+   const y=  allProjectsArray.splice(x, 1, projectName.value);
+    localStorage.setItem('allProjects', allProjectsArray);
+})

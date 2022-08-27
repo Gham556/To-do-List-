@@ -6,4 +6,4 @@ export const switchTabs = function () {
     console.log(temp);
     localStorage.setItem('project', toLoad);
     location.reload();  
-}
+};
