@@ -1,5 +1,3 @@
-
-
 export const switchTabs = function () {
     const listItems = localStorage.getItem('project');
     const temp = this.textContent;

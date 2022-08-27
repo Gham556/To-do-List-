@@ -18,11 +18,11 @@ export const saveList = function commitWholeListToLocalStorageUnderProjectName (
     const projectTitle = projectName.value;
     const savedProject = localStorage.getItem('project');
     localStorage.setItem(projectTitle, savedProject);
-}
+};
 
 export const addProject = function clearDOMContentAndSaveList () {
     const projectTitle = projectName.value;
-    const savedProject = localStorage.getItem('project');
+    const savedProject = structuredClone(localStorage.getItem('project'));
     localStorage.setItem(projectTitle, savedProject);
     console.log(projectTitle);
     allProjectsArray.includes(projectName.value) === true ?  newProjectName() : allProjectsArray.push(projectName.value);
@@ -30,6 +30,8 @@ export const addProject = function clearDOMContentAndSaveList () {
     localStorage.removeItem('project');
    
     location.reload();  
+
+   
 
 };
 
