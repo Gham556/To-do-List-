@@ -71,6 +71,6 @@ projectName.addEventListener('input', () => {
     console.log(allProjectsArray);
 
     let x = allProjectsArray.indexOf(localStorage.getItem('loading'));
-   const y=  allProjectsArray.splice(x, 1, projectName.value);
+    const y =  allProjectsArray.splice(x, 1, projectName.value);
     localStorage.setItem('allProjects', allProjectsArray);
 })
