@@ -5,6 +5,7 @@ import { addItem, addRow } from './addItemButton.js';
 import { addRowFromStorage } from './localStorageController.js';
 import { saveList, addProject } from './saveButton.js';
 import { switchTabs } from './switchProjectTab.js'
+import { deleteProject } from './deleteFunctions.js';
 
 const TEXT = document.createElement('p');
 const variables = document.querySelectorAll('.input');
@@ -18,6 +19,7 @@ const allProjectsArray = projectController !== null ? projectController.split(',
 const header = document.querySelector('.header');
 const projectTabs = document.querySelector('.projectTabs');
 const projectName = document.querySelector('#projectName');
+const deleteList = document.querySelector('#deleteList');
 const baseName = projectName.value;
 
 const currentItem = function (title, description, dueDate, priority, notes) {
@@ -54,7 +56,7 @@ const loadTabs = function loadSavedLists () {
 addItemButton.addEventListener('click', addItem);
 addItemButton.addEventListener('click', addRow);
 
-
+deleteList.addEventListener('click', deleteProject);
 
 window.addEventListener('DOMContentLoaded', addRowFromStorage);
 window.addEventListener('DOMContentLoaded', loadTabs);

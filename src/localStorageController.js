@@ -8,11 +8,12 @@ let counter = 0
 const tempArray = [];
 
  export const addRowFromStorage = () => {
-    const lastSave = localStorage.getItem('project');
+    const lastSave = (localStorage.getItem('project') === 'null' ? '' : localStorage.getItem('project'));
+    console.log(lastSave)
 
-    const loadArray = lastSave !== null ? lastSave.split(',') : [];
+    const loadArray = (lastSave !== null ? lastSave.split(',') : []);
 
-   
+   console.log(loadArray)
     
     while (loadArray.length > 0) {
     
