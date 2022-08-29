@@ -18,6 +18,7 @@ const allProjectsArray = projectController !== null ? projectController.split(',
 const header = document.querySelector('.header');
 const projectTabs = document.querySelector('.projectTabs');
 const projectName = document.querySelector('#projectName');
+const baseName = projectName.value;
 
 const currentItem = function (title, description, dueDate, priority, notes) {
     this.title = title
@@ -52,9 +53,6 @@ const loadTabs = function loadSavedLists () {
 
 addItemButton.addEventListener('click', addItem);
 addItemButton.addEventListener('click', addRow);
-const clearFormField = addItemButton.addEventListener('click', () => {
-    form.reset();
-})
 
 
 
@@ -64,13 +62,22 @@ window.addEventListener('DOMContentLoaded', loadTabs);
 saveButton.addEventListener('click', saveList);
 newProject.addEventListener('click', addProject);
 
-projectName.addEventListener('input', () => {
-    localStorage.setItem(projectName.value, localStorage.getItem('project'));
-    const allProjectsString = localStorage.getItem('allProjects');
-    const allProjectsArray = allProjectsString.split(',');
-    console.log(allProjectsArray);
+const clearFormField = addItemButton.addEventListener('click', () => {
+    form.reset();
+})
 
-    let x = allProjectsArray.indexOf(localStorage.getItem('loading'));
-    const y =  allProjectsArray.splice(x, 1, projectName.value);
+projectName.addEventListener('input', () => {
+    
+    localStorage.setItem(projectName.value, localStorage.getItem('project'));
+    const allProjectsString = localStorage.getItem('allProjects') === null ? ['Project']: localStorage.getItem('allProjects');
+    const allProjectsArray = allProjectsString.split(','); 
+    
+
+    const x = allProjectsArray.indexOf(localStorage.getItem('loading'));
+    const y =  x > 0 && allProjectsArray.splice(x, 1, projectName.value);
+    console.log(y)
     localStorage.setItem('allProjects', allProjectsArray);
+    localStorage.setItem('loading', projectName.value);
+    console.log(allProjectsArray);
+    localStorage.removeItem(y);
 });

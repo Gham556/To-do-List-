@@ -4,10 +4,11 @@ const projectName = document.querySelector('.projectName');
 const newProject = document.querySelector('#newProject');
 const deleteButton = document.querySelector('#deleteButton');
 
-
 const projectController = localStorage.getItem('allProjects');
 
 const allProjectsArray = projectController !== null ? projectController.split(',') : [];
+
+
 
 
 const newProjectName = () => {
@@ -21,10 +22,11 @@ export const saveList = function commitWholeListToLocalStorageUnderProjectName (
 };
 
 export const addProject = function clearDOMContentAndSaveList () {
+   
     const projectTitle = projectName.value;
     const savedProject = structuredClone(localStorage.getItem('project'));
     localStorage.setItem(projectTitle, savedProject);
-    console.log(projectTitle);
+    console.log(allProjectsArray);
     allProjectsArray.includes(projectName.value) === true ?  newProjectName() : allProjectsArray.push(projectName.value);
     localStorage.setItem('allProjects', allProjectsArray);
     localStorage.removeItem('project');
@@ -33,3 +35,4 @@ export const addProject = function clearDOMContentAndSaveList () {
     location.reload();
 
 };
+
